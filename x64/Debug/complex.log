@@ -1,0 +1,3 @@
+﻿  complex.cpp
+C:\Users\Main\Desktop\MyProjects\complex\complex\complex.cpp(81,32): warning C4554: "&": проверьте приоритет операторов на ошибки; для уточнения приоритета используйте скобки
+  complex.vcxproj -> C:\Users\Main\Desktop\MyProjects\complex\x64\Debug\complex.exe

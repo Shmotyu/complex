@@ -1,0 +1,122 @@
+﻿#include <iostream>
+#include <cmath>
+#define M_PI 3.14159265358979323846
+
+using namespace std;
+
+class Complex {
+public:
+    double x;
+    double y;
+   
+
+    Complex() {
+
+    }
+
+    Complex(double x1, double y1) {
+        x = x1;
+        y = y1;
+    }
+};
+
+
+ostream& operator<< (ostream& out, Complex cm) {
+    if (cm.y == 0) {
+        out << cm.x;
+    }
+    else if (cm.y < 0) {
+        out << cm.x << " - " << -cm.y << "i";
+    }
+    else {
+        out << cm.x << " + " << cm.y << "i";
+    }
+    return out;
+}
+
+Complex operator+ (Complex cmf, Complex cms) { Complex temp(cmf.x + cms.x, cmf.y + cms.y); return temp; } /*сложение двух комплексных чисел*/
+Complex operator-(Complex cmf, Complex cms) { Complex temp(cmf.x - cms.x, cmf.y - cms.y); return temp; } /*вычитание двух комплексных чисел*/
+Complex operator== (Complex cmf, double a) { Complex temp(a, 0); return temp; } /*приравнивание числа к комплексному*/
+double operator~(Complex cm) { return sqrt(cm.x * cm.x + cm.y * cm.y); } /*нахождение модуля*/
+double operator!(Complex cm) {
+    double a = cm.x;
+    double b = cm.y;
+    double tg = b / a;
+    double arctg_rad = tg - (pow(tg, 3))/3 + (pow(tg, 5))/5;
+    double arctg_grad = arctg_rad * ((180)/M_PI);
+    return arctg_grad;
+}
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    Complex z1(3, 3);
+    Complex z2(2, 6);
+    cout << z1 + z2 << endl;
+    cout << z1 - z2 << endl;
+    cout << ~z1 << endl;
+    cout << !z1;
+
+}
+#include <iostream>
+#include <cmath>
+#define M_PI 3.14159265358979323846
+
+using namespace std;
+
+class Complex {
+public:
+    double x;
+    double y;
+   
+
+    Complex() {
+
+    }
+
+    Complex(double x1, double y1) {
+        x = x1;
+        y = y1;
+    }
+};
+
+
+ostream& operator<< (ostream& out, Complex cm) {
+    if (cm.y == 0) {
+        out << cm.x;
+    }
+    else if (cm.y < 0) {
+        out << cm.x << " - " << -cm.y << "i";
+    }
+    else {
+        out << cm.x << " + " << cm.y << "i";
+    }
+    return out;
+}
+
+Complex operator+ (Complex cmf, Complex cms) { Complex temp(cmf.x + cms.x, cmf.y + cms.y); return temp; } /*сложение двух комплексных чисел*/
+Complex operator-(Complex cmf, Complex cms) { Complex temp(cmf.x - cms.x, cmf.y - cms.y); return temp; } /*вычитание двух комплексных чисел*/
+Complex operator== (Complex cmf, double a) { Complex temp(a, 0); return temp; } /*приравнивание числа к комплексному*/
+double operator~(Complex cm) { return sqrt(cm.x * cm.x + cm.y * cm.y); } /*нахождение модуля*/
+double operator!(Complex cm) {
+    double a = cm.x;
+    double b = cm.y;
+    double tg = b / a;
+    double arctg_rad = tg - (pow(tg, 3))/3 + (pow(tg, 5))/5;
+    double arctg_grad = arctg_rad * ((180)/M_PI);
+    return arctg_grad;
+}
+
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    Complex z1(3, 3);
+    Complex z2(2, 6);
+    cout << z1 + z2 << endl;
+    cout << z1 - z2 << endl;
+    cout << ~z1 << endl;
+    cout << !z1;
+
+}
